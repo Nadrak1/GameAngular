@@ -1,0 +1,32 @@
+.navbar {
+  margin-bottom: 1%;
+  padding: 0%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(13, 83, 193, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.blanco {
+  color: white;
+  font-size: 120%;
+}
+.blanco:hover {
+  color: grey;
+}
+.btn-primary {
+  background: rgb(0, 7, 144);
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+  color: white;
+}
+
+img.imagen {
+  width: 9rem;
+  height: 5rem;
+}

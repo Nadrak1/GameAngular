@@ -1,0 +1,53 @@
+<table class="table table-dark table-striped tablaGame" id="tblDatos">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games">
+      <td><img class="imagen" src="" /></td>
+      <td>{{ game.name }}</td>
+      <td>
+        <span
+          *ngIf="game.clearance > 0"
+          [ngClass]="{ clearance: game.clearance }"
+          >{{ game.price | currency }}</span
+        >
+        {{ game.price - game.clearance | currency: "ARS$" }}
+      </td>
+      <td>{{ game.type }}</td>
+      <td>
+        <span class="badge text-bg-success" *ngIf="game.stock > 0">{{
+          game.stock
+        }}</span>
+        <span class="badge text-bg-warning" *ngIf="game.stock == 0"
+          >Sin stock</span
+        >
+      </td>
+      <td *ngIf="game.stock">
+        <app-input-integer
+          [(quantity)]="game.quantity"
+          [max]="game.stock"
+          *ngIf="game.stock"
+          (maxReached)="maxReached($event)"
+        ></app-input-integer>
+        cant:{{ game.quantity }}
+        <!-- esto seria un componente atomico(un input) -->
+      </td>
+      <td class="emoji" *ngIf="!game.stock">🥺​</td>
+      <td class="emoji" *ngIf="!game.stock">🥺​</td>
+      <td *ngIf="game.stock">
+        <button class="btn btn-success" (click)="addToCar(game)">
+          Comprar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
