@@ -1,7 +1,8 @@
-<p>{{ title }}</p>
-<ul *ngFor="let b of cartList$ | async">
-  <li>{{ b.name }}: {{ b.quantity }} ({{ b.price | currency }} C/U)</li>
-</ul>
-<p>
-  <span>Su total de compra ={{ total() | currency: "ARS$" }}</span>
-</p>
+<div class="carrito">
+  <h3>{{ title }}</h3>
+  <ul *ngFor="let b of cartList$ | async">
+    <li>{{ b.name }}: {{ b.quantity }} ({{ b.price | currency }} C/U)</li>
+  </ul>
+  <h5>Su total de compra</h5>
+  <span class="total">{{ total() | currency : "ARS$" }}</span>
+</div>
