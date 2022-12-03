@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let game of games">
-      <td><img class="imagen" src="" /></td>
+      <td><img class="imagen" [src]="game.image" [alt]="game.name" /></td>
       <td>{{ game.name }}</td>
       <td>
         <span
@@ -20,7 +20,7 @@
           [ngClass]="{ clearance: game.clearance }"
           >{{ game.price | currency }}</span
         >
-        {{ game.price - game.clearance | currency: "ARS$" }}
+        {{ game.price - game.clearance | currency : "ARS$" }}
       </td>
       <td>{{ game.type }}</td>
       <td>
