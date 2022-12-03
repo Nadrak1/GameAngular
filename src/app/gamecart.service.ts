@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Game } from 'src/app/game-table/Game';
+import { GameTableComponent } from './game-table/game-table.component';
 @Injectable({
   providedIn: 'root',
 })
